@@ -10,7 +10,11 @@
         </label>
         <label>
             Введите пароль:
-            <input type="password" :value="password" />
+            <input
+                type="password" 
+                :value="password" 
+                @input="passwordInput($event.target.value)"
+            />
         </label>
     </div>
 </template>
@@ -26,7 +30,10 @@ export default {
     }, 
     methods: {
         emailInput(value) {
-            this.data = value
+            this.email = value
+        },
+        passwordInput(value) {
+            this.password = value
         }
     }
 }
